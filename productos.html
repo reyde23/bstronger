@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>B-STRONGER GYM</title>
+    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+  </head>
+  <body>
+    <!--========================
+    NAVBAR
+    =========================-->
+
+    <header>
+      <div class="logo"><img src="img/logo.png" /></div>
+      <nav>
+        <ul class="menu">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="productos.html">Productos</a></li>
+          <li><a href="index.html#planes">Planes</a></li>
+          <li><a href="index.html#promociones">Promociones</a></li>
+          <li><a href="clases.html">Clases Pro</a></li>
+          <li><a href="convenios.html">Convenios</a></li>
+          <li><a href="sedes.html">Sedes</a></li>
+        </ul>
+      </nav>
+      <section>
+        <ul class="menu menu-icons">
+          <li>
+            <a href="login.html"><i class="bi bi-person"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="bi bi-search"></i></a>
+          </li>
+          <li>
+            <a href="#" id="abrirCarrito"><i class="bi bi-bag"></i></a>
+          </li>
+        </ul>
+      </section>
+
+
+        <!--  Botón fijo en todas las ventanas: Whatsapp   -->
+      <a href="https://wa.me/573001112233" target="_blank" class="btn-whatsapp">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp" />
+      </a>
+
+      <!--  Botón fijo en todas las ventanas: Inscríbete Ya!   -->
+      <a href="inscribete.html" target="_blank" class="btn-inscribete">¡Inscríbete Ya!</a>
+    
+    </header>
+
+
+
+    <!--========================
+    CARRITO DE COMPRAS
+    =========================-->
+      
+<!-- Overlay -->
+<div class="overlay" id="overlay"></div>
+
+<!-- Ventana Carrito -->
+<div class="ventana-carrito" id="ventanaCarrito">
+  <div class="encabezado-carrito">
+    <span>Mi Carrito de Compras</span>
+    <button class="boton-cerrar" id="cerrarCarrito">&times;</button>
+  </div>
+  <div class="contenido-carrito">
+    El carrito está vacío
+  </div>
+  <div class="pie-carrito">
+    <div class="subtotal">
+      <span>Subtotal</span>
+      <span>$0</span>
+    </div>
+    <button class="boton-pagar">Finalizar Compra</button>
+  </div>
+</div>
+
+
+  
+
+<!--========================
+    CONTENIDO PRODUCTOS
+    =========================-->
+
+        <div class="espacio-head-productos"></div>
+   
+  <video class="baner-product" autoplay loop muted >
+      <source src="./vids/banner_productos.mp4" type="video/mp4">
+  </video>
+
+  <div class="contenido-product">
+
+    <h1>Proteínas, Suplementos y Vitaminas</h1>
+    <p>
+      Para sacarle el mayor beneficio a tu cuerpo y hacerlo mas fuerte, complementa tu nutricion con
+      las mejores marcas del mercado Megaplex, Whey, Muscletech, Iso 100, Bipro y mas <br><span>¡ Consíguelas AQUI !</span>
+    </p>
+  </div>
+
+<br>
+    <hr class="lineadivisora"/>
+
+  <div class="categoria-title">
+    <h2 class="categoria-title-h2">VITA<span>MINAS</span></h2>
+  </div>
+
+    <section class="container product">
+    
+            <div class="card-products">
+                <img src="./img/optiwomenvitamina.jpg">
+                
+                <p class="descripcion">
+                  <h3>OPTI WOMEN</h3><br>
+                   - Aporta energía, disminuye la fatiga<br>
+                   - Refuerza el sistema inmunológico <br>
+                   - Contribuye a la salud femenina <br>
+                   - Ofrece soporte para huesos, metabolismo y salud general
+
+                </p>
+
+                <div class="product-title">
+                  <h3>Vitamina</h3>
+                  <p class="price"> $ 50000</p>
+                </div>
+
+                <div class="product-btn">
+                  <button class="btn disminuir" onclick="cambiarCantidad(-1, 'cantidad1')">Quitar</button>
+                  <div class="contador" id="cantidad1">0</div>
+                  <button class="btn aumentar" onclick="cambiarCantidad(1, 'cantidad1')">Agregar</button>
+                </div>
+
+            </div>
+
+            <div class="card-products">
+                <img src="./img/vitaminamusclete.jpg">
+                
+                <p class="descripcion">
+                 <h3>MUSCLETECH</h3><br>
+                   - Refuerza las defensas<br>
+                   - Mejora el estado de ánimo<br>
+                   - Mejora el metabolismo<br>
+                   - Mejora la función celular<br>
+                   - Mejora el sistema nervioso<br>
+
+                </p>
+
+                <div class="product-title">
+                  <h3>Vitamina</h3>
+                  <p class="price"> $ 50000</p>
+                </div>
+
+              <div class="product-btn">
+                  <button class="btn disminuir" onclick="cambiarCantidad(-1, 'cantidad2')">Quitar</button>
+                  <div class="contador" id="cantidad2">0</div>
+                  <button class="btn aumentar" onclick="cambiarCantidad(1, 'cantidad2')">Agregar</button>
+                </div>
+
+            </div>
+
+            <div class="card-products">
+                <img src="./img/animalpakvitamina.jpg">
+                
+                <p class="descripcion">
+                  <h3>ANIMAL-PACK</h3><br>
+                 - Práctico multivitamínico para hombres y mujeres<br>
+                - todo en uno, zinc, vitaminas C, B, D<br>
+                - apoyo inmunológico, rendimiento nutricional 
+                </p>
+
+                <div class="product-title">
+                  <h3>Vitamina</h3>
+                  <p class="price"> $ 50000</p>
+                </div>
+
+                <div class="product-btn">
+                  <button class="btn disminuir" onclick="cambiarCantidad(-1, 'cantidad3')">Quitar</button>
+                  <div class="contador" id="cantidad3">0</div>
+                  <button class="btn aumentar" onclick="cambiarCantidad(1, 'cantidad3')">Agregar</button>
+                </div>
+
+            </div>
+        
+    </section>
+
+      <hr class="lineadivisora"/>
+
+  <div class="categoria-title">
+    <h2 class="categoria-title-h2">SUPLE<SPAN>MENTOS</SPAN></h2>
+  </div>
+
+    <section class="container product">
+    
+            <div class="card-products">
+                <img src="./img/monsterwheysuplmento.jpg">
+                
+                <p class="descripcion">
+                  <h3>MONSTERWHEY</h3><BR>
+                - Aumenta y conserva la masa muscular<br>
+                - Mejora la recuperación post-entrenamiento<br>
+                - Evita el catabolismo y aporta liberación prolongada de proteínas<br>
+                - Fórmula baja en grasas y carbohidratos, con gran sabor y digestibilidad
+                </p>
+
+                <div class="product-title">
+                  <h3>suplementos</h3>
+             
+                  <p class="price">50000</p>
+                </div>
+                
+                <div class="product-btn">
+                  <button class="btn disminuir" onclick="cambiarCantidad(-1, 'cantidad4')">Quitar</button>
+                  <div class="contador" id="cantidad4">0</div>
+                  <button class="btn aumentar" onclick="cambiarCantidad(1, 'cantidad4')">Agregar</button>
+                </div>
+
+            </div>
+
+            <div class="card-products">
+                <img src="./img/glutaminasuplemento.jpg">
+                
+                <p class="descripcion">
+                  <h3>GLUTAMINA+BCAA</h3><BR>
+                  - Estimulan la síntesis de proteínas musculares<BR>
+                  - Aceleran la recuperación y reducen el daño muscular<br>
+                  - Previenen el catabolismo muscular<br>
+                  - Refuerzan el sistema inmunológico y mejoran la resistencia<br><br><br>
+                </p>
+
+                <div class="product-title">
+                  <h3>suplementos</h3>
+                  <p class="price">50000</p>
+                </div>
+
+                <div class="product-btn">
+                  <button class="btn disminuir" onclick="cambiarCantidad(-1, 'cantidad5')">Quitar</button>
+                  <div class="contador" id="cantidad5">0</div>
+                  <button class="btn aumentar" onclick="cambiarCantidad(1, 'cantidad5')">Agregar</button>
+                </div>
+
+            </div>
+
+            <div class="card-products">
+                <img src="./img/creatinesuplemento.jpg">
+                
+                <p class="descripcion">
+                  <h3>CREATINE MONOHYDRATE</h3><BR>
+                  - Beneficia la salud metabólica y funcional en adultos mayores<br>
+                  - Beneficios cognitivos y apoyo al cerebro<br>
+                  - Favorece la hipertrofia muscular y recuperación<br>
+                  - Mejora la fuerza, potencia y rendimiento físico
+                </p>
+
+                <div class="product-title">
+                  <h3>suplementos</h3>
+                  <p class="price">50000</p>
+                </div>
+
+               <div class="product-btn">
+                  <button class="btn disminuir" onclick="cambiarCantidad(-1, 'cantidad6')">Quitar</button>
+                  <div class="contador" id="cantidad6">0</div>
+                  <button class="btn aumentar" onclick="cambiarCantidad(1, 'cantidad6')">Agregar</button>
+                </div>
+
+            </div>
+        
+    </section>
+
+    <hr class="lineadivisora"/>
+
+    <div class="categoria-title">
+        <h2 class="categoria-title-h2">PROT<span>EINAS</span></h2>
+    </div>
+
+     <section class="container product">
+    
+            <div class="card-products">
+                <img src="./img/megaplex.jpg">
+                
+                <p class="descripcion">
+                  <h3>MEGAPLEX LITE</h3><br>
+                  - Alto contenido proteico para crecimiento muscular<br>
+                  - Combina creatina y HMB para mejorar fuerza y recuperación<br>
+                  - Aporte hipercalórico: energía y volumen ideal para ganancia muscular<br>
+                  - Mezcla estratégica de macronutrientes y sabor agradable
+                </p>
+
+                <div class="product-title">
+                  <h3>Proteina</h3>
+                  <p class="price">$ 50000</p>
+                </div>
+
+                <div class="product-btn">
+                  <button class="btn disminuir" onclick="cambiarCantidad(-1, 'cantidad7')">Quitar</button>
+                  <div class="contador" id="cantidad7">0</div>
+                  <button class="btn aumentar" onclick="cambiarCantidad(1, 'cantidad7')">Agregar</button>
+                </div>
+
+            </div>
+
+            <div class="card-products">
+                <img src="./img/iso100.jpg">
+                
+                <p class="descripcion">
+                  <h3>ISO100</h3><br>
+                  - Absorción ultrarrápida y digestión eficiente<br>
+                  - Potente aporte proteico y aminoácidos esenciales<br>
+                  - Fórmula limpia y apta para dietas restringidas<br>
+                  - Alta calidad, sabor, solubilidad y seguridad antidoping
+                </p>
+
+                <div class="product-title">
+                  <h3>Proteina</h3>
+                  <p class="price">$ 95000</p>
+                </div>
+
+                <div class="product-btn">
+                  <button class="btn disminuir" onclick="cambiarCantidad(-1, 'cantidad8')">Quitar</button>
+                  <div class="contador" id="cantidad8">0</div>
+                  <button class="btn aumentar" onclick="cambiarCantidad(1, 'cantidad8')">Agregar</button>
+                </div>
+
+            </div>
+
+            <div class="card-products">
+                <img src="./img/whey.jpg">
+                
+                <p class="descripcion">
+                  <h3>WHEY PROTEIN</h3><BR>
+                  - Fuente completa de proteína para promover el crecimiento muscular<br>
+                  - Favorece la recuperación y previene el desgaste muscular<br>
+                  - Ayuda a controlar el apetito y favorece la pérdida de grasa<br>
+                  - Promueve la salud cardiovascular y antioxidante
+
+                </p>
+
+                <div class="product-title">
+                  <h3>Proteina</h3>
+                  <p class="price">$ 120000</p>
+                </div>
+
+               <div class="product-btn">
+                  <button class="btn disminuir" onclick="cambiarCantidad(-1, 'cantidad9')">Quitar</button>
+                  <div class="contador" id="cantidad9">0</div>
+                  <button class="btn aumentar" onclick="cambiarCantidad(1, 'cantidad9')">Agregar</button>
+                </div>
+
+            </div>
+        
+    </section>
+
+  <hr class="lineadivisora"/>
+    <div class="categoria-title">
+    <h2 class="categoria-title-h2">COM<SPAN>BOS</SPAN></h2>
+  </div>
+
+    <section class="container product">
+          <div>
+            <div class="card-products-combo">
+                <img src="./img/megaplexcombo.jpg">
+
+            </div>
+            <div class="product-title-combo">
+                    <h3>Combo</h3>
+                    <p class="price">$ 250.000</p>
+                  </div>
+
+            <div class="product-btn">
+                    <button class="btn disminuir" onclick="cambiarCantidad(-1, 'cantidad10')">Quitar</button>
+                    <div class="contador" id="cantidad10">0</div>
+                    <button class="btn aumentar" onclick="cambiarCantidad(1, 'cantidad10')">Agregar</button>
+             </div>
+          </div>
+            <div>
+            <div class="card-products-combo">
+                <img src="./img/iso100combo.jpg">
+
+            </div>
+            <div class="product-title-combo">
+                    <h3>Combo</h3>
+                    <p class="price">$ 225.000</p>
+                  </div>
+
+            <div class="product-btn">
+                    <button class="btn disminuir" onclick="cambiarCantidad(-1, 'cantidad11')">Quitar</button>
+                    <div class="contador" id="cantidad11">0</div>
+                    <button class="btn aumentar" onclick="cambiarCantidad(1, 'cantidad11')">Agregar</button>
+             </div>
+          </div>
+
+            <div>
+            <div class="card-products-combo">
+                <img src="./img/wheycombo.jpg">
+
+            </div>
+            <div class="product-title-combo">
+                    <h3>Combo</h3>
+                    <p class="price">$ 180.000</p>
+             </div>
+
+            <div class="product-btn">
+                    <button class="btn disminuir" onclick="cambiarCantidad(-1, 'cantidad12')">Quitar</button>
+                    <div class="contador" id="cantidad12">0</div>
+                    <button class="btn aumentar" onclick="cambiarCantidad(1, 'cantidad12')">Agregar</button>
+             </div>
+          </div>
+        
+    </section>
+
+    
+
+    <!--========================
+    FOOTER
+    =========================-->
+    <footer>
+      <div class="logofooter"><img src="img/logo.png" /></div>
+      <hr />
+      <div class="siguenos">
+        <h3>Síguenos</h3>
+        <ul>
+          <li>
+            <a href=""><i class="bi bi-facebook"></i></a>
+          </li>
+          <li>
+            <a href=""><i class="bi bi-instagram"></i></a>
+          </li>
+          <li>
+            <a href=""><i class="bi bi-youtube"></i></a>
+          </li>
+          <li>
+            <a href=""><i class="bi bi-linkedin"></i></a>
+          </li>
+          <li>
+            <a href=""><i class="bi bi-tiktok"></i></a>
+          </li>
+        </ul>
+      </div>
+      <hr />
+      <div class="contenedorfooter">
+        <div class="contenedores">
+          <h4><strong>Nosotros</strong></h4>
+          <ul>
+            <li><a href="index.html">B-Stronger GYM</a></li>
+            <li><a href="">¿Quiénes somos?</a></li>
+            <li><a href="">Preguntas frecuentes</a></li>
+            <li><a href="">Trabaja con nosotros</a></li>
+            <li><a href="index.html#planes">Planes</a></li>
+            <li><a href="convenios.html">Convenios</a></li>
+            <li><a href="sedes.html">Sedes</a></li>
+          </ul>
+        </div>
+
+        <div class="contenedores">
+          <h4><strong>Contáctanos</strong></h4>
+          <ul>
+            <li>
+              <a href=""><i class="bi bi-whatsapp"></i>&nbsp; 321 123 1234 </a>
+            </li>
+            <li>
+              <a href=""
+                ><i class="bi bi-envelope-at"></i>&nbsp;
+                bstrongergym@gmail.com</a
+              >
+            </li>
+            <li>
+              <a href=""
+                ><i class="bi bi-telephone"></i>&nbsp; (602) 123 4567</a
+              >
+            </li>
+            <li>
+              <a href=""
+                ><i class="bi bi-geo-alt-fill"></i>&nbsp; Calle 14N # 8N - 35,
+                Granada, <br />Sede Norte (Cali)</a
+              >
+            </li>
+            <li>
+              <a href=""
+                ><i class="bi bi-geo-alt-fill"></i>&nbsp; Calle 5 # 52 - 210,
+                Cosmocentro, <br />Sede Sur (Cali)</a
+              >
+            </li>
+            <li>
+              <a href=""
+                ><i class="bi bi-geo-alt-fill"></i>&nbsp; Carrera 98 # 16 - 200,
+                Jardín Plaza, <br />Sede Sur (Cali)</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div class="contenedores">
+          <h4><strong>Aviso Legal</strong></h4>
+          <ul>
+            <li><a href="">Política de privacidad</a></li>
+            <li><a href="">Política de cookies</a></li>
+            <li><a href="">Política de inclusión</a></li>
+            <li><a href="politica_de_convenios.pdf" target="_blank">Política de convenios</a></li>
+            <li><a href="">Superintendencia de industria y comercio</a></li>
+            <li><a href="">Garantía de nuestros productos</a></li>
+            <li><a href="">Términos y condiciones</a></li>
+          </ul>
+        </div>
+
+        <div class="contenedores">
+          <h4><strong>Sugerencias</strong></h4>
+          <form class="formulario">
+            <input type="text" placeholder="Nombre" />
+            <input type="email" placeholder="Correo" />
+            <textarea placeholder="Mensaje"></textarea>
+            <input type="submit" value="Enviar" />
+          </form>
+        </div>
+      </div>
+      <hr />
+      <br />
+      Copyright © 2025 B-STRONGER GYM. All Rights Reserved<br />
+      Cll 14N # 8N - 35, Granada | Cll 5 # 52 - 210, Cosmocentro | Cra 98 # 16 - 200,
+      Jardín Plaza <br />
+      Cali-Valle del Cauca | Whatsapp: 321 123 1234 <br /><br /><br /><br />
+    </footer>
+
+    <!--========================
+    ELEMENTOS GENERALES (Bs, Js)
+    =========================-->
+
+    <script src="./bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/script.js"></script>
+
+    <script>
+        const abrirCarrito=document.getElementById('abrirCarrito');
+        const cerrarCarrito=document.getElementById('cerrarCarrito');
+        const ventanaCarrito=document.getElementById('ventanaCarrito');
+        const overlay=document.getElementById('overlay');
+
+        abrirCarrito.addEventListener('click',()=>{
+        ventanaCarrito.classList.add('abierto');
+        overlay.classList.add('activo');
+        });
+        cerrarCarrito.addEventListener('click',()=>{
+        ventanaCarrito.classList.remove('abierto');
+        overlay.classList.remove('activo');
+        });
+        overlay.addEventListener('click',()=>{
+        ventanaCarrito.classList.remove('abierto');
+        overlay.classList.remove('activo');
+        });
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>B-STRONGER GYM</title>
+    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+  </head>
+  <body>
+    <!--========================
+    NAVBAR
+    =========================-->
+
+
+    <header>
+      <div class="logo"><img src="img/logo.png" /></div>
+      <nav>
+        <ul class="menu">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="productos.html">Productos</a></li>
+          <li><a href="planes.html">Planes</a></li>
+          <li><a href="promociones.html">Promociones</a></li>
+          <li><a href="clases.html">Clases Pro</a></li>
+          <li><a href="convenios.html">Convenios</a></li>
+          <li><a href="sedes.html">Sedes</a></li>
+        </ul>
+      </nav>
+      <section>
+        <ul class="menu menu-icons">
+          <li>
+            <a href="login.html"><i class="bi bi-person"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="bi bi-search"></i></a>
+          </li>
+          <li>
+            <a href="carrito-compras.html"><i class="bi bi-bag"></i></a>
+          </li>
+        </ul>
+      </section>
+
+      <!--  Botón fijo en todas las ventanas: Whatsapp   -->
+      <a href="https://wa.me/573001112233" target="_blank" class="btn-whatsapp">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp" />
+      </a>
+
+      <!--  Botón fijo en todas las ventanas: Inscríbete Ya!   -->
+      <a href="inscribete.html" target="_blank" class="btn-inscribete">¡Inscríbete Ya!</a>
+
+    </header>
+
+ 
+    <!--========================
+    CARRITO DE COMPRAS
+    =========================-->
+
+    <div class="espacio-head"></div>
+
+<button class="icono-carrito" id="abrirCarrito">
+  <a href="#"><i class="bi bi-bag"></i></a>
+</button>
+
+      
+<!-- Overlay -->
+<div class="overlay" id="overlay"></div>
+
+<!-- Ventana Carrito -->
+<div class="ventana-carrito" id="ventanaCarrito">
+  <div class="encabezado-carrito">
+    <span>Mi Carrito</span>
+    <button class="boton-cerrar" id="cerrarCarrito">&times;</button>
+  </div>
+  <div class="contenido-carrito">
+    El carrito está vacío
+  </div>
+  <div class="pie-carrito">
+    <div class="subtotal">
+      <span>Subtotal</span>
+      <span>$0</span>
+    </div>
+    <button class="boton-pagar">Finalizar Compra</button>
+  </div>
+</div>
+
+
+    <!--========================
+    FOOTER
+    =========================-->
+    <footer>
+      <div class="logofooter"><img src="img/logo.png" /></div>
+      <hr />
+      <div class="siguenos">
+        <h3>Síguenos</h3>
+        <ul>
+          <li>
+            <a href=""><i class="bi bi-facebook"></i></a>
+          </li>
+          <li>
+            <a href=""><i class="bi bi-instagram"></i></a>
+          </li>
+          <li>
+            <a href=""><i class="bi bi-youtube"></i></a>
+          </li>
+          <li>
+            <a href=""><i class="bi bi-linkedin"></i></a>
+          </li>
+          <li>
+            <a href=""><i class="bi bi-tiktok"></i></a>
+          </li>
+        </ul>
+      </div>
+      <hr />
+      <div class="contenedorfooter">
+        <div class="contenedores">
+          <h4><strong>Nosotros</strong></h4>
+          <ul>
+            <li><a href="index.html">B-Stronger GYM</a></li>
+            <li><a href="">¿Quiénes somos?</a></li>
+            <li><a href="">Preguntas frecuentes</a></li>
+            <li><a href="">Trabaja con nosotros</a></li>
+            <li><a href="planes.html">Planes</a></li>
+            <li><a href="convenios.html">Convenios</a></li>
+            <li><a href="sedes.html">Sedes</a></li>
+          </ul>
+        </div>
+
+        <div class="contenedores">
+          <h4><strong>Contáctanos</strong></h4>
+          <ul>
+            <li>
+              <a href=""><i class="bi bi-whatsapp"></i>&nbsp; 321 123 1234 </a>
+            </li>
+            <li>
+              <a href=""
+                ><i class="bi bi-envelope-at"></i>&nbsp;
+                bstrongergym@gmail.com</a
+              >
+            </li>
+            <li>
+              <a href=""
+                ><i class="bi bi-telephone"></i>&nbsp; (602) 123 4567</a
+              >
+            </li>
+            <li>
+              <a href=""
+                ><i class="bi bi-geo-alt-fill"></i>&nbsp; Calle 14N #8N-35,
+                Granada, <br />Cali, Valle del Cauca</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div class="contenedores">
+          <h4><strong>Aviso Legal</strong></h4>
+          <ul>
+            <li><a href="">Política de privacidad</a></li>
+            <li><a href="">Política de cookies</a></li>
+            <li><a href="">Política de inclusión</a></li>
+            <li><a href="">Superintendencia de industria y comercio</a></li>
+            <li><a href="">Garantía de nuestros productos</a></li>
+            <li><a href="">Términos y condiciones</a></li>
+          </ul>
+        </div>
+
+        <div class="contenedores">
+          <h4><strong>Sugerencias</strong></h4>
+          <form class="formulario">
+            <input type="text" placeholder="Nombre" />
+            <input type="email" placeholder="Correo" />
+            <textarea placeholder="Mensaje"></textarea>
+            <input type="submit" value="Enviar" />
+          </form>
+        </div>
+      </div>
+      <hr />
+      <br />
+      Copyright © 2025 B-STRONGER GYM. All Rights Reserved<br />
+      Calle 14N #8N-35, Granada, Cali-Valle del Cauca | Whatsapp: 321 123 1234
+      <br /><br /><br /><br />
+    </footer>
+
+    <!--========================
+    ELEMENTOS GENERALES (Bs, Js)
+    =========================-->
+
+    <script src="./bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/script.js"></script>
+
+    <script>
+        const abrirCarrito=document.getElementById('abrirCarrito');
+        const cerrarCarrito=document.getElementById('cerrarCarrito');
+        const ventanaCarrito=document.getElementById('ventanaCarrito');
+        const overlay=document.getElementById('overlay');
+
+        abrirCarrito.addEventListener('click',()=>{
+        ventanaCarrito.classList.add('abierto');
+        overlay.classList.add('activo');
+        });
+        cerrarCarrito.addEventListener('click',()=>{
+        ventanaCarrito.classList.remove('abierto');
+        overlay.classList.remove('activo');
+        });
+        overlay.addEventListener('click',()=>{
+        ventanaCarrito.classList.remove('abierto');
+        overlay.classList.remove('activo');
+        });
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>B-STRONGER GYM</title>
+    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+  </head>
+  <body>
+    <!--========================
+    NAVBAR
+    =========================-->
+    <header>
+      <div class="logo"><img src="img/logo.png" /></div>
+      <nav>
+        <ul class="menu">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="productos.html">Productos</a></li>
+          <li><a href="index.html#planes">Planes</a></li>
+          <li><a href="index.html#promociones">Promociones</a></li>
+          <li><a href="clases.html">Clases Pro</a></li>
+          <li><a href="convenios.html">Convenios</a></li>
+          <li><a href="sedes.html">Sedes</a></li>
+        </ul>
+      </nav>
+      <section>
+        <ul class="menu menu-icons">
+          <li>
+            <a href="login.html"><i class="bi bi-person"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="bi bi-search"></i></a>
+          </li>
+          <li>
+            <a href="#" id="abrirCarrito"><i class="bi bi-bag"></i></a>
+          </li>
+        </ul>
+      </section>
+
+
+  
+      <!--  Botón fijo en todas las ventanas: Whatsapp   -->
+      <a href="https://wa.me/573001112233" target="_blank" class="btn-whatsapp">
+        <img
+          src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg"
+          alt="WhatsApp"/>
+      </a>
+
+      <!--  Botón fijo en todas las ventanas: Inscríbete Ya!   -->
+      <a href="inscribete.html" class="btn-inscribete" target="_blank">¡Inscríbete Ya!</a>
+    </header>
+
+    <!--========================
+    CARRUSEL
+    =========================-->
+
+    <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img
+            src="./img/carrusel1.png"
+            class="d-block w-100"
+            style="min-height: 300px; height: 100%; object-fit: cover"
+            alt="Imagen 1"
+          />
+        </div>
+        <div class="carousel-item">
+          <img
+            src="./img/carrusel2.png"
+            class="d-block w-100"
+            style="min-height: 300px; height: 100%; object-fit: cover"
+            alt="Imagen 2"
+          />
+        </div>
+        <div class="carousel-item">
+          <img
+            src="./img/carrusel3.png"
+            class="d-block w-100"
+            style="min-height: 300px; height: 100%; object-fit: cover"
+            alt="Imagen 3"
+          />
+        </div>
+      </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExample"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExample"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    <br />
+
+
+
+ <!--========================
+    CARRITO DE COMPRAS
+    =========================-->
+
+
+
+      
+<!-- Overlay -->
+<div class="overlay" id="overlay"></div>
+
+<!-- Ventana Carrito -->
+<div class="ventana-carrito" id="ventanaCarrito">
+  <div class="encabezado-carrito">
+    <span>Mi Carrito de Compras</span>
+    <button class="boton-cerrar" id="cerrarCarrito">&times;</button>
+  </div>
+  <div class="contenido-carrito">
+    El carrito está vacío
+  </div>
+  <div class="pie-carrito">
+    <div class="subtotal">
+      <span>Subtotal</span>
+      <span>$0</span>
+    </div>
+    <button class="boton-pagar">Finalizar Compra</button>
+  </div>
+</div>
+
+
+
+
+
+
+    <!--========================
+    CONTENIDO: VIDEO-SLOGAN
+    =========================-->
+    <section class="bienvenida">
+      <!--Video-->
+      <div class="video-presentacion">
+        <video autoplay muted loop playsinline>
+          <source src="./vids/Video_B-STRONGER_GYM1.mp4" type="video/mp4" />
+        </video>
+      </div>
+
+      <!--Slogan y texto-->
+      <div class="contenedor-texto">
+        <p class="intro-texto">
+          Entrena tu cuerpo y fortalece tu mente con disciplina y constancia.
+          Vive cada sesión como un reto personal y descubre la mejor versión de
+          ti mismo. Nuestro equipo de profesionales te acompaña para que
+          alcances tus metas con seguridad, energía y confianza.
+        </p>
+
+        <h1 class="titulo-bienvenida">
+          BIENVENIDO A <span>B-STRONGER GYM</span>, <br />
+          NO SOLO ENTRENAMOS <span class="texto-outline">CUERPOS</span>, <br />
+          FORJAMOS <span class="texto-outline">MENTES FUERTES</span>
+        </h1>
+
+        <p class="sub-texto">
+          Entrena con propósito, vive con intensidad. <br />
+          Supera tus propios límites cada día.
+        </p>
+
+        <a href="sedes.html" class="boton-sedes" id="planes">SEDES</a>
+      </div>
+    </section>
+    <hr class="lineadivisora" />
+
+    <!--========================
+    CONTENIDO: PLANES
+    =========================-->
+    <section class="planes">
+      <h2 class="titulo-planes">
+        Elige tu plan y entrena <span>con fuerza</span>
+      </h2>
+
+      <div class="contenedor-planes">
+        <!-- Plan Básico -->
+        <div class="plan-card">
+          <h3 class="nombre-plan">Plan Esencial</h3>
+          <p class="descripcion-plan">
+            Entrena en tu sede favorita con acceso a lo básico.
+          </p>
+          <p class="precio-plan">$79.900 <span>/mes</span></p>
+          <button class="boton-plan">¡Inscríbete ya!</button>
+          <ul class="beneficios-plan">
+            <li>Acceso a todas las máquinas de entrenamiento</li>
+            <li>Clases extras incluidas</li>
+            <li>Acceso 24/7 al gimnasio</li>
+            <li>Acompañamiento de instructores</li>
+          </ul>
+        </div>
+
+        <!-- Plan Intermedio -->
+        <div class="plan-card destacado">
+          <div class="etiqueta">Más popular</div>
+          <h3 class="nombre-plan">Plan Pro</h3>
+          <p class="descripcion-plan">
+            Entrena con más beneficios y asesoría personalizada.
+          </p>
+          <p class="precio-plan">$99.900 <span>/mes</span></p>
+          <button class="boton-plan">¡Inscríbete ya!</button>
+          <ul class="beneficios-plan">
+            <li>Incluye todos los beneficios del Plan Esencial</li>
+            <li>Acceso a todas las áreas del gimnasio</li>
+            <li>Acceso a sillones de masajes relajantes</li>
+            <li>Asesoría mensual con entrenador</li>
+            <li>Descuentos en suplementos</li>
+          </ul>
+        </div>
+
+        <!-- Plan Premium -->
+        <div class="plan-card">
+          <h3 class="nombre-plan">Plan Élite</h3>
+          <p class="descripcion-plan">
+            Vive la experiencia completa de B-STRONGER GYM.
+          </p>
+          <p class="precio-plan">$129.900 <span>/mes</span></p>
+          <button class="boton-plan">¡Inscríbete ya!</button>
+          <ul class="beneficios-plan">
+            <li>Incluye todos los beneficios del Plan Esencial y Pro</li>
+            <li>Acceso ilimitado a todas las sedes</li>
+            <li>Sesiones con entrenador personal (3 al mes)</li>
+            <li>Consulta mensual con nutricionista</li>
+            <li>
+              Clases exclusivas a elección (3 disciplinas entre 6 disponibles)
+            </li>
+            <li>Invitación para un acompañante 1 vez al mes</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <br />
+    <hr class="lineadivisora" />
+    <!--========================
+    CONTENIDO: CARDS CLASES EXTRAS INCLUIDAS
+    =========================-->
+    <section class="clases-exclusivas">
+      <h2 class="titulo-exclusivas">
+        Conoce nuestras <span>clases extras incluidas</span>
+      </h2>
+      <div class="contenedor-clases">
+        <!-- Clase 1 -->
+        <div class="clase-card">
+          <img src="./img/cards_rumba_fitness.jpg" alt="Clase Rumba Fitness" />
+          <div class="clase-info">
+            <h3>RUMBA FITNESS</h3>
+            <p class="horarios">
+              🕒 Lunes, Miércoles y Viernes <br />
+              ⏰ 8:00 AM - 2:00 PM - 7:00 PM
+            </p>
+            <div class="clase-detalles">
+              <span>⏱ 45 min</span>
+              <span>⚡ Alta</span>
+            </div>
+            <p>
+              Clase divertida con ritmos latinos que mejora tu coordinación,
+              quema calorías y fortalece el sistema cardiovascular.
+            </p>
+          </div>
+        </div>
+
+        <!-- Clase 2 -->
+        <div class="clase-card">
+          <img src="./img/cards_hiit.jpg" alt="Clase HIIT" />
+          <div class="clase-info">
+            <h3>HIIT</h3>
+            <p class="horarios">
+              🕒 Martes, Jueves y Sábados <br />
+              ⏰ 8:00 AM - 2:00 PM - 7:00 PM
+            </p>
+            <div class="clase-detalles">
+              <span>⏱ 30 min</span>
+              <span>⚡ Muy Alta</span>
+            </div>
+            <p>
+              Entrenamiento de alta intensidad por intervalos que acelera tu
+              metabolismo, quema grasa y mejora tu resistencia.
+            </p>
+          </div>
+        </div>
+
+        <!-- Clase 3 -->
+        <div class="clase-card">
+          <img src="./img/cards_coreyabs.jpg" alt="Clase Core & Abs" />
+          <div class="clase-info">
+            <h3>CORE & ABS</h3>
+            <p class="horarios">
+              🕒 Lunes, Jueves y Sábados <br />
+              ⏰ 10:00 AM - 4:00 PM - 7:00 PM
+            </p>
+            <div class="clase-detalles">
+              <span>⏱ 30 min</span>
+              <span>⚡ Media</span>
+            </div>
+            <p>
+              Sesión enfocada en abdomen y zona media para fortalecer el core,
+              mejorar la postura y prevenir lesiones.
+            </p>
+          </div>
+        </div>
+
+        <!-- Clase 4 -->
+        <div class="clase-card">
+          <img src="./img/cards_stretching.jpg" alt="Clase Stretching" />
+          <div class="clase-info">
+            <h3>STRETCHING</h3>
+            <p class="horarios">
+              🕒 Martes, Miércoles y Viernes <br />
+              ⏰ 10:00 AM - 3:00PM - 8:00 PM
+            </p>
+            <div class="clase-detalles">
+              <span>⏱ 30 min</span>
+              <span>⚡ Baja</span>
+            </div>
+            <a href="" id="promociones"></a>
+            <p>
+              Clase de estiramientos que mejora la flexibilidad, relaja el
+              cuerpo y ayuda a la recuperación muscular.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <br />
+
+    <!--========================
+    CONTENIDO: PROMOCIONES
+    =========================-->
+    <section class="promociones-section">
+      <div class="promociones-overlay">
+        <img src="./img/Fondo_promociones.png" alt="" />
+      </div>
+
+      <div class="promociones-content">
+        <h2 class="titulo-promociones">
+          Conoce nuestras <span> promociones </span>
+        </h2>
+
+        <div class="carrusel-contenedor">
+          <div class="carrusel-pista">
+            <!-- Tarjetas originales -->
+            <div class="tarjeta-promocion">
+              <img src="./img/Card_promo1.png" alt="Promoción 1" />
+              <div class="tarjeta-btn"><a class="tarjeta-btn-a" href="inscribete.html" target="_blank"    class="btn-inscribete">¡Inscríbete Ya!</a></div>
+              </div>
+            <div class="tarjeta-promocion">
+              <img src="./img/Card_promo2.png" alt="Promoción 2" />
+              <div class="tarjeta-btn"><a class="tarjeta-btn-a" href="inscribete.html" target="_blank"    class="btn-inscribete">¡Inscríbete Ya!</a></div>
+              </div>
+            <div class="tarjeta-promocion">
+              <img src="./img/Card_promo3.png" alt="Promoción 3" />
+              <div class="tarjeta-btn"><a class="tarjeta-btn-a" href="inscribete.html" target="_blank"    class="btn-inscribete">¡Inscríbete Ya!</a></div>
+              </div>
+            <div class="tarjeta-promocion">
+              <img src="./img/Card_promo4.png" alt="Promoción 4" />
+              <div class="tarjeta-btn"><a class="tarjeta-btn-a" href="inscribete.html" target="_blank"    class="btn-inscribete">¡Inscríbete Ya!</a></div>
+              </div>
+
+            <!-- Duplicadas para el bucle infinito -->
+            <div class="tarjeta-promocion">
+              <img src="./img/Card_promo1.png" alt="Promoción 1" />
+              <div class="tarjeta-btn"><a class="tarjeta-btn-a" href="inscribete.html" target="_blank"    class="btn-inscribete">¡Inscríbete Ya!</a></div>
+              </div>
+            <div class="tarjeta-promocion">
+              <img src="./img/Card_promo2.png" alt="Promoción 2" />
+              <div class="tarjeta-btn"><a class="tarjeta-btn-a" href="inscribete.html" target="_blank"    class="btn-inscribete">¡Inscríbete Ya!</a></div>
+              </div>
+            <div class="tarjeta-promocion">
+              <img src="./img/Card_promo3.png" alt="Promoción 3" />
+              <div class="tarjeta-btn"><a class="tarjeta-btn-a" href="inscribete.html" target="_blank"    class="btn-inscribete">¡Inscríbete Ya!</a></div>
+              </div>
+            <div class="tarjeta-promocion">
+              <img src="./img/Card_promo4.png" alt="Promoción 4" />
+              <div class="tarjeta-btn"><a class="tarjeta-btn-a" href="inscribete.html" target="_blank"    class="btn-inscribete">¡Inscríbete Ya!</a></div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--========================
+    CONTENIDO: APP
+    =========================-->
+    <section class="app-section">
+      <div class="app-container">
+        <!-- Video a la izquierda -->
+        <div class="app-video">
+          <video src="./vids/VideoApp.mp4" autoplay muted loop></video>
+        </div>
+
+        <!-- Texto, QR y botones a la derecha -->
+        <div class="app-info">
+          <h2 class="titulo-App">
+            <span>B-STRONGER GYM</span> App: tu compañero de fuerza, siempre
+            contigo
+          </h2>
+          <p>
+            Ya seas principiante o atleta avanzado, con nuestra aplicación
+            tendrás el apoyo que necesitas para cumplir tus objetivos. Lleva tu
+            rutina de entrenamiento, consejos de nutrición y seguimiento de
+            progreso, todo desde tu celular.
+          </p>
+          <p>
+            📲 Descárgala gratis y entrena sin límites.<br />
+            Exclusivo para miembros de
+            <span class="texto-outlineApp">B-STRONGER GYM</span>
+          </p>
+
+          <!-- Código QR -->
+          <div class="qr-container">
+            <img src="./img/codigoQR.jpg" alt="Código QR B-STRONGER GYM" />
+          </div>
+
+          <!-- Botones de descarga -->
+          <div class="store-buttons">
+            <a href="https://play.google.com/store/games?hl=en" target="_blank">
+              <img
+                src="./img/google-play.png"
+                alt="Disponible en Google Play"
+              />
+            </a>
+            <a href="https://www.apple.com/co/app-store/" target="_blank">
+              <img src="./img/app-store.png" alt="Disponible en App Store" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <br />
+
+
+
+    <!--========================
+    FOOTER
+    =========================-->
+    <footer>
+      <div class="logofooter"><img src="img/logo.png" /></div>
+      <hr />
+      <div class="siguenos">
+        <h3>Síguenos</h3>
+        <ul>
+          <li>
+            <a href=""><i class="bi bi-facebook"></i></a>
+          </li>
+          <li>
+            <a href=""><i class="bi bi-instagram"></i></a>
+          </li>
+          <li>
+            <a href=""><i class="bi bi-youtube"></i></a>
+          </li>
+          <li>
+            <a href=""><i class="bi bi-linkedin"></i></a>
+          </li>
+          <li>
+            <a href=""><i class="bi bi-tiktok"></i></a>
+          </li>
+        </ul>
+      </div>
+      <hr />
+      <div class="contenedorfooter">
+        <div class="contenedores">
+          <h4><strong>Nosotros</strong></h4>
+          <ul>
+            <li><a href="index.html">B-Stronger GYM</a></li>
+            <li><a href="">¿Quiénes somos?</a></li>
+            <li><a href="">Preguntas frecuentes</a></li>
+            <li><a href="">Trabaja con nosotros</a></li>
+            <li><a href="index.html#planes">Planes</a></li>
+            <li><a href="convenios.html">Convenios</a></li>
+            <li><a href="sedes.html">Sedes</a></li>
+          </ul>
+        </div>
+
+        <div class="contenedores">
+          <h4><strong>Contáctanos</strong></h4>
+          <ul>
+            <li>
+              <a href=""><i class="bi bi-whatsapp"></i>&nbsp; 321 123 1234 </a>
+            </li>
+            <li>
+              <a href=""
+                ><i class="bi bi-envelope-at"></i>&nbsp;
+                bstrongergym@gmail.com</a
+              >
+            </li>
+            <li>
+              <a href=""
+                ><i class="bi bi-telephone"></i>&nbsp; (602) 123 4567</a
+              >
+            </li>
+            <li>
+              <a href=""
+                ><i class="bi bi-geo-alt-fill"></i>&nbsp; Calle 14N # 8N - 35,
+                Granada, <br />Sede Norte (Cali)</a
+              >
+            </li>
+            <li>
+              <a href=""
+                ><i class="bi bi-geo-alt-fill"></i>&nbsp; Calle 5 # 52 - 210,
+                Cosmocentro, <br />Sede Sur (Cali)</a
+              >
+            </li>
+            <li>
+              <a href=""
+                ><i class="bi bi-geo-alt-fill"></i>&nbsp; Carrera 98 # 16 - 200,
+                Jardín Plaza, <br />Sede Sur (Cali)</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div class="contenedores">
+          <h4><strong>Aviso Legal</strong></h4>
+          <ul>
+            <li><a href="">Política de privacidad</a></li>
+            <li><a href="">Política de cookies</a></li>
+            <li><a href="">Política de inclusión</a></li>
+            <li><a href="politica_de_convenios.pdf" target="_blank">Política de convenios</a></li>
+            <li><a href="">Superintendencia de industria y comercio</a></li>
+            <li><a href="">Garantía de nuestros productos</a></li>
+            <li><a href="">Términos y condiciones</a></li>
+          </ul>
+        </div>
+
+        <div class="contenedores">
+          <h4><strong>Sugerencias</strong></h4>
+          <form class="formulario">
+            <input type="text" placeholder="Nombre" />
+            <input type="email" placeholder="Correo" />
+            <textarea placeholder="Mensaje"></textarea>
+            <input type="submit" value="Enviar" />
+          </form>
+        </div>
+      </div>
+      <hr />
+      <br />
+      Copyright © 2025 B-STRONGER GYM. All Rights Reserved<br />
+      Cll 14N # 8N - 35, Granada | Cll 5 # 52 - 210, Cosmocentro | Cra 98 # 16 - 200,
+      Jardín Plaza <br />
+      Cali-Valle del Cauca | Whatsapp: 321 123 1234 <br /><br /><br /><br />
+    </footer>
+
+    <!--========================
+    ELEMENTOS GENERALES (Bs, Js)
+    =========================-->
+
+    <script src="./bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/script.js"></script>
+
+    <script>
+        const abrirCarrito=document.getElementById('abrirCarrito');
+        const cerrarCarrito=document.getElementById('cerrarCarrito');
+        const ventanaCarrito=document.getElementById('ventanaCarrito');
+        const overlay=document.getElementById('overlay');
+
+        abrirCarrito.addEventListener('click',()=>{
+        ventanaCarrito.classList.add('abierto');
+        overlay.classList.add('activo');
+        });
+        cerrarCarrito.addEventListener('click',()=>{
+        ventanaCarrito.classList.remove('abierto');
+        overlay.classList.remove('activo');
+        });
+        overlay.addEventListener('click',()=>{
+        ventanaCarrito.classList.remove('abierto');
+        overlay.classList.remove('activo');
+        });
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>B-STRONGER GYM</title>
+    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    />
+
+
+    <style>
+  :root{
+    --kickboxing:#e74c3c;
+    --cycling:#2980b9;
+    --pilates:#27ae60;
+    --trx:#f39c12;
+    --funcional:#8e44ad;
+    --crossfit:#16a085;
+  }
+
+  body{font-family:Arial,Helvetica,sans-serif;background:#f7f7f9;margin:0;color:#222}
+  h2{margin:18px 0 10px}
+  .wrap{max-width:1100px;margin:0 auto}
+
+  /* tablas base */
+  table{width:100%;border-collapse:collapse;background:#fff;box-shadow:0 3px 10px rgba(0,0,0,.06);margin:14px 0}
+  th,td{border:1px solid #ddd;padding:10px;text-align:center;vertical-align:middle}
+  th{background:#060b23;color:#fff;text-transform:uppercase;letter-spacing:.02em;font-size:13px}
+  tr:nth-child(even) td{background:#fafafa}
+
+  /* chips de clase con fondo */
+  .chip{display:inline-block;padding:4px 8px;border-radius:8px;font-weight:700;font-size:12px;line-height:1;margin:2px 3px;color:#fff}
+  .kickboxing-bg{background:var(--kickboxing)}
+  .cycling-bg{background:var(--cycling)}
+  .pilates-bg{background:var(--pilates)}
+  .trx-bg{background:var(--trx);color:#111}
+  .funcional-bg{background:var(--funcional)}
+  .crossfit-bg{background:var(--crossfit)}
+
+  /* leyenda */
+  .leyenda{display:flex;flex-wrap:wrap;gap:12px;margin:10px 0 24px}
+  .leyenda-item{display:flex;align-items:center;gap:8px;font-size:14px}
+  .box{width:14px;height:14px;border-radius:3px}
+  .kickboxing-box{background:var(--kickboxing)}
+  .cycling-box{background:var(--cycling)}
+  .pilates-box{background:var(--pilates)}
+  .trx-box{background:var(--trx)}
+  .funcional-box{background:var(--funcional)}
+  .crossfit-box{background:var(--crossfit)}
+
+  /* columna hora un poco más estrecha en la tabla por horas  */
+  .hora{white-space:nowrap;font-weight:700;background:#f0f3f8}
+
+  th.hora {
+  background-color: #060b23; 
+  color: #fff;             
+}
+
+/* ========================
+   MENU : BOTONES ACTIVOS EN EL MENU
+   ======================== */
+
+.menu li a.active::after {
+  transform: translateX(-50%) scaleX(1);
+}
+
+</style>
+  </head>
+  <body>
+    <!--========================
+    NAVBAR
+    =========================-->
+    <header>
+      <div class="logo"><img src="img/logo.png" /></div>
+      <nav>
+        <ul class="menu">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="productos.html">Productos</a></li>
+          <li><a href="planes.html">Planes</a></li>
+          <li><a href="promociones.html">Promociones</a></li>
+          <li><a href="clases.html">Clases Pro</a></li>
+          <li><a href="convenios.html">Convenios</a></li>
+          <li><a href="sedes.html">Sedes</a></li>
+        </ul>
+      </nav>
+      <section>
+        <ul class="menu menu-icons">
+          <li>
+            <a href="login.html"><i class="bi bi-person"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="bi bi-search"></i></a>
+          </li>
+          <li>
+            <a href="#" id="abrirCarrito"><i class="bi bi-bag"></i></a>
+          </li>
+        </ul>
+      </section>
+
+      <!--  Botón fijo en todas las ventanas: Whatsapp   -->
+      <a href="https://wa.me/573001112233" target="_blank" class="btn-whatsapp">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp" />
+      </a>
+
+      <!--  Botón fijo en todas las ventanas: Inscríbete Ya!   -->
+      <a href="inscribete.html" target="_blank" class="btn-inscribete">¡Inscríbete Ya!</a>
+
+    </header>
+
+
+
+<!--========================
+CARRITO DE COMPRAS
+=========================-->
+      
+<!-- Overlay -->
+<div class="overlay" id="overlay"></div>
+
+<!-- Ventana Carrito -->
+<div class="ventana-carrito" id="ventanaCarrito">
+  <div class="encabezado-carrito">
+    <span>Mi Carrito de Compras</span>
+    <button class="boton-cerrar" id="cerrarCarrito">&times;</button>
+  </div>
+  <div class="contenido-carrito">
+    El carrito está vacío
+  </div>
+  <div class="pie-carrito">
+    <div class="subtotal">
+      <span>Subtotal</span>
+      <span>$0</span>
+    </div>
+    <button class="boton-pagar">Finalizar Compra</button>
+  </div>
+</div>
+
+
+
+    <!--========================
+    MAIN - HORARIOS COMPLETOS DE CLASES PRO
+    =========================-->
+
+<div class="espacio-head-horarios"></div>
+<div class="wrap">
+
+  <!-- LEYENDA (mismos colores en ambas tablas) 
+  <div class="leyenda">
+    <div class="leyenda-item"><span class="box kickboxing-box"></span> Kick-boxing</div>
+    <div class="leyenda-item"><span class="box cycling-box"></span> Cycling</div>
+    <div class="leyenda-item"><span class="box pilates-box"></span> Pilates</div>
+    <div class="leyenda-item"><span class="box trx-box"></span> TRX</div>
+    <div class="leyenda-item"><span class="box funcional-box"></span> Funcional</div>
+    <div class="leyenda-item"><span class="box crossfit-box"></span> CrossFit</div>
+  </div> -->
+
+
+    <h2 class="titulo-clases-pro">
+      <span class="palabra-clases">Horarios </span><span class="palabra-pro">por Clase</span>
+    </h2>
+
+  <table>
+    <tr>
+      <th>Clase</th>
+      <th>Duración</th>
+      <th>Lunes - Viernes</th>
+      <th>Sábado</th>
+      <th>Domingo</th>
+    </tr>
+    <tr>
+      <td><span class="chip kickboxing-bg">Kick-boxing</span></td>
+      <td>60 min</td>
+      <td>5am / 9am / 4pm / 7pm</td>
+      <td>7am / 11am / 5pm</td>
+      <td>8am / 12pm</td>
+    </tr>
+    <tr>
+      <td><span class="chip cycling-bg">Cycling</span></td>
+      <td>45 min</td>
+      <td>6am / 8am / 12pm / 6pm</td>
+      <td>8am / 2pm / 6pm</td>
+      <td>9am / 11am</td>
+    </tr>
+    <tr>
+      <td><span class="chip pilates-bg">Pilates</span></td>
+      <td>50 min</td>
+      <td>7am / 10am / 5pm</td>
+      <td>9am / 3pm</td>
+      <td>10am / 1pm</td>
+    </tr>
+    <tr>
+      <td><span class="chip trx-bg">TRX</span></td>
+      <td>45 min</td>
+      <td>5am / 8am / 3pm / 7pm</td>
+      <td>8am / 1pm / 6pm</td>
+      <td>7am / 12pm</td>
+    </tr>
+    <tr>
+      <td><span class="chip funcional-bg">Funcional</span></td>
+      <td>55 min</td>
+      <td>6am / 11am / 4pm / 8pm</td>
+      <td>7am / 12pm / 5pm</td>
+      <td>9am / 1pm</td>
+    </tr>
+    <tr>
+      <td><span class="chip crossfit-bg">CrossFit</span></td>
+      <td>60 min</td>
+      <td>6am / 9am / 1pm / 7pm</td>
+      <td>9am / 2pm / 6pm</td>
+      <td>8am / 12pm</td>
+    </tr>
+  </table>
+
+  <!-- TABLA POR HORAS -->
+   <br>
+
+  <h2 class="titulo-clases-pro">
+    <span class="palabra-clases">Horarios </span><span class="palabra-pro">por Hora</span>
+  </h2>
+
+  <table>
+    <tr>
+      <th class="hora">Hora</th>
+      <th>Lunes</th>
+      <th>Martes</th>
+      <th>Miércoles</th>
+      <th>Jueves</th>
+      <th>Viernes</th>
+      <th>Sábado</th>
+      <th>Domingo</th>
+    </tr>
+
+    <!-- 05:00 -->
+    <tr>
+      <td class="hora">5:00</td>
+      <!-- L-V comparten mismos horarios definidos -->
+      <td><span class="chip kickboxing-bg">Kick-boxing</span><span class="chip trx-bg">TRX</span></td>
+      <td><span class="chip kickboxing-bg">Kick-boxing</span><span class="chip trx-bg">TRX</span></td>
+      <td><span class="chip kickboxing-bg">Kick-boxing</span><span class="chip trx-bg">TRX</span></td>
+      <td><span class="chip kickboxing-bg">Kick-boxing</span><span class="chip trx-bg">TRX</span></td>
+      <td><span class="chip kickboxing-bg">Kick-boxing</span><span class="chip trx-bg">TRX</span></td>
+      <td>—</td>
+      <td>—</td>
+    </tr>
+
+    <!-- 06:00 -->
+    <tr>
+      <td class="hora">6:00</td>
+      <td><span class="chip cycling-bg">Cycling</span><span class="chip funcional-bg">Funcional</span><span class="chip crossfit-bg">CrossFit</span></td>
+      <td><span class="chip cycling-bg">Cycling</span><span class="chip funcional-bg">Funcional</span><span class="chip crossfit-bg">CrossFit</span></td>
+      <td><span class="chip cycling-bg">Cycling</span><span class="chip funcional-bg">Funcional</span><span class="chip crossfit-bg">CrossFit</span></td>
+      <td><span class="chip cycling-bg">Cycling</span><span class="chip funcional-bg">Funcional</span><span class="chip crossfit-bg">CrossFit</span></td>
+      <td><span class="chip cycling-bg">Cycling</span><span class="chip funcional-bg">Funcional</span><span class="chip crossfit-bg">CrossFit</span></td>
+      <td>—</td>
+      <td>—</td>
+    </tr>
+
+    <!-- 07:00 -->
+    <tr>
+      <td class="hora">7:00</td>
+      <td><span class="chip pilates-bg">Pilates</span></td>
+      <td><span class="chip pilates-bg">Pilates</span></td>
+      <td><span class="chip pilates-bg">Pilates</span></td>
+      <td><span class="chip pilates-bg">Pilates</span></td>
+      <td><span class="chip pilates-bg">Pilates</span></td>
+      <td><span class="chip kickboxing-bg">Kick-boxing</span><span class="chip funcional-bg">Funcional</span></td>
+      <td><span class="chip trx-bg">TRX</span></td>
+    </tr>
+
+    <!-- 08:00 -->
+    <tr>
+      <td class="hora">8:00</td>
+      <td><span class="chip cycling-bg">Cycling</span><span class="chip trx-bg">TRX</span></td>
+      <td><span class="chip cycling-bg">Cycling</span><span class="chip trx-bg">TRX</span></td>
+      <td><span class="chip cycling-bg">Cycling</span><span class="chip trx-bg">TRX</span></td>
+      <td><span class="chip cycling-bg">Cycling</span><span class="chip trx-bg">TRX</span></td>
+      <td><span class="chip cycling-bg">Cycling</span><span class="chip trx-bg">TRX</span></td>
+      <td><span class="chip cycling-bg">Cycling</span><span class="chip trx-bg">TRX</span></td>
+      <td><span class="chip kickboxing-bg">Kick-boxing</span><span class="chip crossfit-bg">CrossFit</span></td>
+    </tr>
+
+    <!-- 09:00 -->
+    <tr>
+      <td class="hora">9:00</td>
+      <td><span class="chip kickboxing-bg">Kick-boxing</span><span class="chip crossfit-bg">CrossFit</span></td>
+      <td><span class="chip kickboxing-bg">Kick-boxing</span><span class="chip crossfit-bg">CrossFit</span></td>
+      <td><span class="chip kickboxing-bg">Kick-boxing</span><span class="chip crossfit-bg">CrossFit</span></td>
+      <td><span class="chip kickboxing-bg">Kick-boxing</span><span class="chip crossfit-bg">CrossFit</span></td>
+      <td><span class="chip kickboxing-bg">Kick-boxing</span><span class="chip crossfit-bg">CrossFit</span></td>
+      <td><span class="chip pilates-bg">Pilates</span><span class="chip crossfit-bg">CrossFit</span></td>
+      <td><span class="chip cycling-bg">Cycling</span><span class="chip funcional-bg">Funcional</span></td>
+    </tr>
+
+    <!-- 10:00 -->
+    <tr>
+      <td class="hora">10:00</td>
+      <td><span class="chip pilates-bg">Pilates</span></td>
+      <td><span class="chip pilates-bg">Pilates</span></td>
+      <td><span class="chip pilates-bg">Pilates</span></td>
+      <td><span class="chip pilates-bg">Pilates</span></td>
+      <td><span class="chip pilates-bg">Pilates</span></td>
+      <td>—</td>
+      <td><span class="chip pilates-bg">Pilates</span></td>
+    </tr>
+
+    <!-- 11:00 -->
+    <tr>
+      <td class="hora">11:00</td>
+      <td><span class="chip funcional-bg">Funcional</span></td>
+      <td><span class="chip funcional-bg">Funcional</span></td>
+      <td><span class="chip funcional-bg">Funcional</span></td>
+      <td><span class="chip funcional-bg">Funcional</span></td>
+      <td><span class="chip funcional-bg">Funcional</span></td>
+      <td><span class="chip kickboxing-bg">Kick-boxing</span></td>
+      <td><span class="chip cycling-bg">Cycling</span></td>
+    </tr>
+
+    <!-- 12:00 m -->
+    <tr>
+      <td class="hora">12:00</td>
+      <td><span class="chip cycling-bg">Cycling</span></td>
+      <td><span class="chip cycling-bg">Cycling</span></td>
+      <td><span class="chip cycling-bg">Cycling</span></td>
+      <td><span class="chip cycling-bg">Cycling</span></td>
+      <td><span class="chip cycling-bg">Cycling</span></td>
+      <td><span class="chip funcional-bg">Funcional</span></td>
+      <td><span class="chip kickboxing-bg">Kick-boxing</span><span class="chip crossfit-bg">CrossFit</span></td>
+    </tr>
+
+    <!-- 13:00 -->
+    <tr>
+      <td class="hora">1:00 pm</td>
+      <td><span class="chip crossfit-bg">CrossFit</span></td>
+      <td><span class="chip crossfit-bg">CrossFit</span></td>
+      <td><span class="chip crossfit-bg">CrossFit</span></td>
+      <td><span class="chip crossfit-bg">CrossFit</span></td>
+      <td><span class="chip crossfit-bg">CrossFit</span></td>
+      <td><span class="chip trx-bg">TRX</span></td>
+      <td><span class="chip pilates-bg">Pilates</span><span class="chip funcional-bg">Funcional</span></td>
+    </tr>
+
+    <!-- 14:00 -->
+    <tr>
+      <td class="hora">2:00 pm</td>
+      <td>—</td>
+      <td>—</td>
+      <td>—</td>
+      <td>—</td>
+      <td>—</td>
+      <td><span class="chip cycling-bg">Cycling</span><span class="chip crossfit-bg">CrossFit</span></td>
+      <td>—</td>
+    </tr>
+
+    <!-- 15:00 -->
+    <tr>
+      <td class="hora">3:00 pm</td>
+      <td><span class="chip trx-bg">TRX</span></td>
+      <td><span class="chip trx-bg">TRX</span></td>
+      <td><span class="chip trx-bg">TRX</span></td>
+      <td><span class="chip trx-bg">TRX</span></td>
+      <td><span class="chip trx-bg">TRX</span></td>
+      <td><span class="chip pilates-bg">Pilates</span></td>
+      <td>—</td>
+    </tr>
+
+    <!-- 16:00 -->
+    <tr>
+      <td class="hora">4:00 pm</td>
+      <td><span class="chip kickboxing-bg">Kick-boxing</span><span class="chip funcional-bg">Funcional</span></td>
+      <td><span class="chip kickboxing-bg">Kick-boxing</span><span class="chip funcional-bg">Funcional</span></td>
+      <td><span class="chip kickboxing-bg">Kick-boxing</span><span class="chip funcional-bg">Funcional</span></td>
+      <td><span class="chip kickboxing-bg">Kick-boxing</span><span class="chip funcional-bg">Funcional</span></td>
+      <td><span class="chip kickboxing-bg">Kick-boxing</span><span class="chip funcional-bg">Funcional</span></td>
+      <td>—</td>
+      <td>—</td>
+    </tr>
+
+    <!-- 17:00 -->
+    <tr>
+      <td class="hora">5:00 pm</td>
+      <td><span class="chip pilates-bg">Pilates</span><span class="chip crossfit-bg">CrossFit</span></td>
+      <td><span class="chip pilates-bg">Pilates</span><span class="chip crossfit-bg">CrossFit</span></td>
+      <td><span class="chip pilates-bg">Pilates</span><span class="chip crossfit-bg">CrossFit</span></td>
+      <td><span class="chip pilates-bg">Pilates</span><span class="chip crossfit-bg">CrossFit</span></td>
+      <td><span class="chip pilates-bg">Pilates</span><span class="chip crossfit-bg">CrossFit</span></td>
+      <td><span class="chip kickboxing-bg">Kick-boxing</span><span class="chip funcional-bg">Funcional</span></td>
+      <td>—</td>
+    </tr>
+
+    <!-- 18:00 -->
+    <tr>
+      <td class="hora">6:00 pm</td>
+      <td><span class="chip cycling-bg">Cycling</span><span class="chip funcional-bg">Funcional</span></td>
+      <td><span class="chip cycling-bg">Cycling</span><span class="chip funcional-bg">Funcional</span></td>
+      <td><span class="chip cycling-bg">Cycling</span><span class="chip funcional-bg">Funcional</span></td>
+      <td><span class="chip cycling-bg">Cycling</span><span class="chip funcional-bg">Funcional</span></td>
+      <td><span class="chip cycling-bg">Cycling</span><span class="chip funcional-bg">Funcional</span></td>
+      <td><span class="chip cycling-bg">Cycling</span><span class="chip trx-bg">TRX</span><span class="chip crossfit-bg">CrossFit</span></td>
+      <td>—</td>
+    </tr>
+
+    <!-- 19:00 -->
+    <tr>
+      <td class="hora">7:00 pm</td>
+      <td><span class="chip kickboxing-bg">Kick-boxing</span><span class="chip trx-bg">TRX</span><span class="chip crossfit-bg">CrossFit</span></td>
+      <td><span class="chip kickboxing-bg">Kick-boxing</span><span class="chip trx-bg">TRX</span><span class="chip crossfit-bg">CrossFit</span></td>
+      <td><span class="chip kickboxing-bg">Kick-boxing</span><span class="chip trx-bg">TRX</span><span class="chip crossfit-bg">CrossFit</span></td>
+      <td><span class="chip kickboxing-bg">Kick-boxing</span><span class="chip trx-bg">TRX</span><span class="chip crossfit-bg">CrossFit</span></td>
+      <td><span class="chip kickboxing-bg">Kick-boxing</span><span class="chip trx-bg">TRX</span><span class="chip crossfit-bg">CrossFit</span></td>
+      <td>—</td>
+      <td>—</td>
+    </tr>
+
+    <!-- 20:00 -->
+    <tr>
+      <td class="hora">8:00 pm</td>
+      <td><span class="chip funcional-bg">Funcional</span></td>
+      <td><span class="chip funcional-bg">Funcional</span></td>
+      <td><span class="chip funcional-bg">Funcional</span></td>
+      <td><span class="chip funcional-bg">Funcional</span></td>
+      <td><span class="chip funcional-bg">Funcional</span></td>
+      <td>—</td>
+      <td>—</td>
+    </tr>
+  </table>
+</div>
+
+  <div class="btn-contenedor-horarios">
+    <button class="btn-horarios-completos"><a href="clases.html" target="_blank"><i class="fa-solid fa-arrow-left"></i>Regresar a Clases Pro</a></button>
+  </div>
+
+    <!--========================
+    FOOTER
+    =========================-->
+    <footer>
+      <div class="logofooter"><img src="img/logo.png" /></div>
+      <hr />
+      <div class="siguenos">
+        <h3>Síguenos</h3>
+        <ul>
+          <li>
+            <a href=""><i class="bi bi-facebook"></i></a>
+          </li>
+          <li>
+            <a href=""><i class="bi bi-instagram"></i></a>
+          </li>
+          <li>
+            <a href=""><i class="bi bi-youtube"></i></a>
+          </li>
+          <li>
+            <a href=""><i class="bi bi-linkedin"></i></a>
+          </li>
+          <li>
+            <a href=""><i class="bi bi-tiktok"></i></a>
+          </li>
+        </ul>
+      </div>
+      <hr />
+      <div class="contenedorfooter">
+        <div class="contenedores">
+          <h4><strong>Nosotros</strong></h4>
+          <ul>
+            <li><a href="index.html">B-Stronger GYM</a></li>
+            <li><a href="">¿Quiénes somos?</a></li>
+            <li><a href="">Preguntas frecuentes</a></li>
+            <li><a href="">Trabaja con nosotros</a></li>
+            <li><a href="index.html#planes">Planes</a></li>
+            <li><a href="convenios.html">Convenios</a></li>
+            <li><a href="sedes.html">Sedes</a></li>
+          </ul>
+        </div>
+
+        <div class="contenedores">
+          <h4><strong>Contáctanos</strong></h4>
+          <ul>
+            <li>
+              <a href=""><i class="bi bi-whatsapp"></i>&nbsp; 321 123 1234 </a>
+            </li>
+            <li>
+              <a href=""
+                ><i class="bi bi-envelope-at"></i>&nbsp;
+                bstrongergym@gmail.com</a
+              >
+            </li>
+            <li>
+              <a href=""
+                ><i class="bi bi-telephone"></i>&nbsp; (602) 123 4567</a
+              >
+            </li>
+            <li>
+              <a href=""
+                ><i class="bi bi-geo-alt-fill"></i>&nbsp; Calle 14N # 8N - 35,
+                Granada, <br />Sede Norte (Cali)</a
+              >
+            </li>
+            <li>
+              <a href=""
+                ><i class="bi bi-geo-alt-fill"></i>&nbsp; Calle 5 # 52 - 210,
+                Cosmocentro, <br />Sede Sur (Cali)</a
+              >
+            </li>
+            <li>
+              <a href=""
+                ><i class="bi bi-geo-alt-fill"></i>&nbsp; Carrera 98 # 16 - 200,
+                Jardín Plaza, <br />Sede Sur (Cali)</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div class="contenedores">
+          <h4><strong>Aviso Legal</strong></h4>
+          <ul>
+            <li><a href="">Política de privacidad</a></li>
+            <li><a href="">Política de cookies</a></li>
+            <li><a href="">Política de inclusión</a></li>
+            <li><a href="politica_de_convenios.pdf" target="_blank">Política de convenios</a></li>
+            <li><a href="">Superintendencia de industria y comercio</a></li>
+            <li><a href="">Garantía de nuestros productos</a></li>
+            <li><a href="">Términos y condiciones</a></li>
+          </ul>
+        </div>
+
+        <div class="contenedores">
+          <h4><strong>Sugerencias</strong></h4>
+          <form class="formulario">
+            <input type="text" placeholder="Nombre" />
+            <input type="email" placeholder="Correo" />
+            <textarea placeholder="Mensaje"></textarea>
+            <input type="submit" value="Enviar" />
+          </form>
+        </div>
+      </div>
+      <hr />
+      <br />
+      Copyright © 2025 B-STRONGER GYM. All Rights Reserved<br />
+      Cll 14N # 8N - 35, Granada | Cll 5 # 52 - 210, Cosmocentro | Cra 98 # 16 - 200,
+      Jardín Plaza <br />
+      Cali-Valle del Cauca | Whatsapp: 321 123 1234 <br /><br /><br /><br />
+    </footer>
+
+    <!--========================
+    ELEMENTOS GENERALES (Bs, Js)
+    =========================-->
+
+    <script src="./bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/script.js"></script>
+
+    <script>
+        const abrirCarrito=document.getElementById('abrirCarrito');
+        const cerrarCarrito=document.getElementById('cerrarCarrito');
+        const ventanaCarrito=document.getElementById('ventanaCarrito');
+        const overlay=document.getElementById('overlay');
+
+        abrirCarrito.addEventListener('click',()=>{
+        ventanaCarrito.classList.add('abierto');
+        overlay.classList.add('activo');
+        });
+        cerrarCarrito.addEventListener('click',()=>{
+        ventanaCarrito.classList.remove('abierto');
+        overlay.classList.remove('activo');
+        });
+        overlay.addEventListener('click',()=>{
+        ventanaCarrito.classList.remove('abierto');
+        overlay.classList.remove('activo');
+        });
+    </script>
+  </body>
+</html>
